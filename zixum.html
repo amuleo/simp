@@ -38,44 +38,15 @@
         const appContent = getBrandData(currentBrandName);
         
         if (appContent) {
-            const pageTitleElement = document.querySelector('title');
             const brandTitleElement = document.getElementById('brand-title');
             const brandDescriptionElement = document.getElementById('brand-description');
             const socialLinksContainer = document.getElementById('social-links-container');
             
-            if (pageTitleElement) {
-                pageTitleElement.textContent = appContent.pageTitle;
-            }
             if (brandTitleElement) {
                 brandTitleElement.textContent = appContent.brandTitle;
             }
             if (brandDescriptionElement) {
                 brandDescriptionElement.textContent = appContent.brandDescription;
-            }
-
-            if (appContent.seo) {
-                document.title = appContent.seo.title;
-
-                function setMetaTag(name, content, property = false) {
-                    let selector = property ? `meta[property="${name}"]` : `meta[name="${name}"]`;
-                    let metaTag = document.querySelector(selector);
-                    if (!metaTag) {
-                        metaTag = document.createElement('meta');
-                        if (property) {
-                            metaTag.setAttribute('property', name);
-                        } else {
-                            metaTag.setAttribute('name', name);
-                        }
-                        document.head.appendChild(metaTag);
-                    }
-                    metaTag.setAttribute('content', content);
-                }
-
-                setMetaTag('description', appContent.seo.description);
-                setMetaTag('keywords', appContent.seo.keywords);
-                setMetaTag('og:title', appContent.seo.ogTitle, true);
-                setMetaTag('og:description', appContent.seo.ogDescription, true);
-                setMetaTag('og:image', appContent.seo.ogImage, true);
             }
 
             if (socialLinksContainer) {
@@ -103,9 +74,9 @@
             }
         } else {
             console.error(`Brand data for "${currentBrandName}" not found.`);
-            document.getElementById('brand-title').textContent = "خطا";
-            document.getElementById('brand-description').textContent = "اطلاعات برند بارگذاری نشد.";
-            document.querySelector('title').textContent = "خطا";
+            document.getElementById('brand-title').textContent = "زیکسوم";
+            document.getElementById('brand-description').textContent = "اطلاعات فایل بارگذاری نشد.";
+            document.querySelector('title').textContent = "زیکسوم";
         }
     </script>
 </body>
