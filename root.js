@@ -1,6 +1,5 @@
 const brandContent = {
         "zixum": {
-            pageTitle: "زیکسوم",
             brandTitle: "زیکسوم",
             filename: "zixum",
             brandDescription: "به زیکسوم بپیوندید و به دنیای اسرار پنهان جهان وارد شوید. جایی برای اکتشافات فراطبیعی و محتوای مرموز.",
