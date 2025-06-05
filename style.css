@@ -33,3 +33,9 @@ body {
     font-family: 'Mikhak', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+.brand-description-text {
+    text-align: justify;
+    hyphens: auto; /* Enable hyphenation for better justification in Persian */
+    font-weight: 300; /* Lighter weight for main description text */
+    line-height: 1.7; /* More relaxed line height */
+}
