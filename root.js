@@ -1,4 +1,12 @@
 const brandContent = {
+        "amuleo": {
+            brandTitle: "سایت عمو لئو",
+            type: "link",
+            filename: "amuleo.ir", // بدون پسوند
+            brandDescription: "",
+            socialLinks: [
+            ]
+        },
         "zixum": {
             brandTitle: "زیکسوم",
             type: "page",
