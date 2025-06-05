@@ -1,1 +1,30 @@
+:root {
+    --color-background: #fdfaf0;
+    --color-text: #2c2c2c;
+    --color-card-background: #ffffff;
+    --color-card-text: #4a4a4a;
+    --color-brand-accent: #2c2c2c;
+    --color-border-accent: #d1d5db;
+    --color-link-bg-instagram-start: #833ab4;
+    --color-link-bg-instagram-mid: #fd1d1d;
+    --color-link-bg-instagram-end: #fcb045;
+}
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background: #1a1a1a;
+        --color-text: #e0e0e0;
+        --color-card-background: #2a2a2a;
+        --color-card-text: #a0a0a0;
+        --color-brand-accent: #FFFFFF;
+        --color-border-accent: #4b5563;
+        --color-link-bg-instagram-start: #a45bd4;
+        --color-link-bg-instagram-mid: #ff4d4d;
+        --color-link-bg-instagram-end: #ffd700;
+    }
+}
+
+body {
+    font-family: 'mikhak', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
