@@ -3,63 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Loading...</title>
+    <title>Loading...</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'media',
-            theme: {
-                extend: {
-                    colors: {
-                        'base-background': 'var(--color-background)',
-                        'base-text': 'var(--color-text)',
-                        'card-background': 'var(--color-card-background)',
-                        'card-text': 'var(--color-card-text)',
-                        'brand': 'var(--color-brand-accent)',
-                        'border-color': 'var(--color-border-accent)',
-                        'instagram-start': 'var(--color-link-bg-instagram-start)',
-                        'instagram-mid': 'var(--color-link-bg-instagram-mid)',
-                        'instagram-end': 'var(--color-link-bg-instagram-end)',
-                    },
-                },
-            },
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <style>
-        :root {
-            --color-background: #fdfaf0;
-            --color-text: #2c2c2c;
-            --color-card-background: #ffffff;
-            --color-card-text: #4a4a4a;
-            --color-brand-accent: #2c2c2c;
-            --color-border-accent: #d1d5db;
-            --color-link-bg-instagram-start: #833ab4;
-            --color-link-bg-instagram-mid: #fd1d1d;
-            --color-link-bg-instagram-end: #fcb045;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --color-background: #1a1a1a;
-                --color-text: #e0e0e0;
-                --color-card-background: #2a2a2a;
-                --color-card-text: #a0a0a0;
-                --color-brand-accent: #FFFFFF;
-                --color-border-accent: #4b5563;
-                --color-link-bg-instagram-start: #a45bd4;
-                --color-link-bg-instagram-mid: #ff4d4d;
-                --color-link-bg-instagram-end: #ffd700;
-            }
-        }
-
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body dir="rtl" class="min-h-screen flex items-center justify-center p-4 bg-base-background text-base-text">
 
@@ -82,13 +35,13 @@
         const currentBrandName = "zixum";
 
         const appContent = getBrandData(currentBrandName);
-      
+        
         if (appContent) {
-            const pageTitleElement = document.getElementById('page-title');
+            const pageTitleElement = document.querySelector('title');
             const brandTitleElement = document.getElementById('brand-title');
             const brandDescriptionElement = document.getElementById('brand-description');
             const socialLinksContainer = document.getElementById('social-links-container');
-          
+            
             if (pageTitleElement) {
                 pageTitleElement.textContent = appContent.pageTitle;
             }
@@ -97,6 +50,31 @@
             }
             if (brandDescriptionElement) {
                 brandDescriptionElement.textContent = appContent.brandDescription;
+            }
+
+            if (appContent.seo) {
+                document.title = appContent.seo.title;
+
+                function setMetaTag(name, content, property = false) {
+                    let selector = property ? `meta[property="${name}"]` : `meta[name="${name}"]`;
+                    let metaTag = document.querySelector(selector);
+                    if (!metaTag) {
+                        metaTag = document.createElement('meta');
+                        if (property) {
+                            metaTag.setAttribute('property', name);
+                        } else {
+                            metaTag.setAttribute('name', name);
+                        }
+                        document.head.appendChild(metaTag);
+                    }
+                    metaTag.setAttribute('content', content);
+                }
+
+                setMetaTag('description', appContent.seo.description);
+                setMetaTag('keywords', appContent.seo.keywords);
+                setMetaTag('og:title', appContent.seo.ogTitle, true);
+                setMetaTag('og:description', appContent.seo.ogDescription, true);
+                setMetaTag('og:image', appContent.seo.ogImage, true);
             }
 
             if (socialLinksContainer) {
@@ -130,9 +108,9 @@
             }
         } else {
             console.error(`Brand data for "${currentBrandName}" not found.`);
-            // Optionally, display an error message on the page
-            document.getElementById('brand-title').textContent = "Error";
-            document.getElementById('brand-description').textContent = "Brand data could not be loaded.";
+            document.getElementById('brand-title').textContent = "خطا";
+            document.getElementById('brand-description').textContent = "اطلاعات برند بارگذاری نشد.";
+            document.querySelector('title').textContent = "خطا";
         }
     </script>
 </body>
