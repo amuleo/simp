@@ -64,18 +64,20 @@
     </style>
 </head>
 <body class="bg-[var(--bg-body)] text-[var(--text-body)] p-0 sm:p-6 md:p-8 flex items-center justify-center min-h-screen transition-colors duration-300">
-    <!-- Main container: Added sm:border and removed border-none for cleaner conditional border -->
-    <div class="container bg-[var(--bg-container)] rounded-none sm:rounded-xl p-0 sm:p-6 sm:p-8 md:p-10 w-full sm:max-w-2xl mx-auto sm:mx-auto sm:border border-[var(--border-container)] transition-colors duration-300">
+    <!-- Main container: Updated padding for mobile (pt-[30px] px-0 pb-0) and simplified sm padding -->
+    <div class="container bg-[var(--bg-container)] rounded-none sm:rounded-xl pt-[30px] px-0 pb-0 sm:p-8 md:p-10 w-full sm:max-w-2xl mx-auto sm:mx-auto sm:border border-[var(--border-container)] transition-colors duration-300">
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 text-center text-[var(--text-body)]">
             خداحافظ برنامه نویسی
         </h1>
 
         <!-- Date Box for Farewell -->
+        <!-- Adjusted margin for mobile view (mx-4) to align with potential container horizontal padding -->
         <div id="farewell-date-box" class="bg-[var(--bg-date-box)] text-[var(--text-date-box)] border border-[var(--border-date-box)] rounded-lg p-4 mb-8 transition-colors duration-300 mx-4 sm:mx-0">
             <!-- Content will be added by JavaScript -->
         </div>
 
         <!-- Main Content Sections -->
+        <!-- Adjusted padding for mobile view (px-4) to provide some horizontal spacing if container px is 0 -->
         <section class="mb-6 px-4 py-4 sm:p-6 sm:border sm:border-[var(--border-container)] sm:rounded-lg">
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-right text-[var(--text-body)]">
                 شروع با رویا، پایان با واقعیت
