@@ -92,12 +92,6 @@
                     }
 
                     anchor.className = `flex items-center justify-center text-white font-semibold py-3 px-6 rounded-xl transform hover:scale-105 w-full transition-all duration-200 ${backgroundClasses}`;
-
-                    if (link.iconClass) {
-                        const icon = document.createElement('i');
-                        icon.className = `${link.iconClass} ml-2`;
-                        anchor.appendChild(icon);
-                    }
                     
                     const span = document.createElement('span');
                     span.textContent = link.name;
