@@ -1,5 +1,4 @@
-export function getBrandData(brandName) {
-    const brandContent = {
+const brandContent = {
         "zixum": {
             pageTitle: "زیکسوم",
             brandTitle: "زیکسوم",
@@ -58,6 +57,7 @@ export function getBrandData(brandName) {
         }
     };
 
+export function getBrandData(brandName) {
     return brandContent[brandName] || null;
 }
 
