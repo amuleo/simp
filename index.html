@@ -73,20 +73,25 @@
         import { getBrandData } from './root.js';
 
         // Load data for the main simp.ir page
+        // این خط، اطلاعات مربوط به 'simp_main_page' را از root.js دریافت می‌کند
         const appContent = getBrandData('simp_main_page');
         
         if (appContent && appContent.featuredBrands) {
             const dynamicLinksContainer = document.getElementById('dynamic-links-container');
             dynamicLinksContainer.innerHTML = ''; // Clear existing hardcoded links
 
+            // حلقه زدن روی برندهای ویژه تعریف شده در 'simp_main_page'
             appContent.featuredBrands.forEach(brandKey => {
-                const brand = getBrandData(brandKey); // Get full data for each featured brand
+                const brand = getBrandData(brandKey); // دریافت اطلاعات کامل هر برند
                 if (brand) {
                     const anchor = document.createElement('a');
-                    // Get link text from pageTitle
+                    
+                    // متن دکمه از pageTitle (مثلاً "زیکسوم")
                     const linkText = brand.pageTitle;
-                    // Construct link using brandTitle (which is assumed to be filename)
-                    const linkHref = `/${brand.brandTitle.toLowerCase()}.html`; 
+                    
+                    // لینک دکمه از filename (که شما آن را در root.js اضافه می‌کنید)
+                    // فرض بر این است که filename شامل نام کامل فایل (مثلاً "zixum") است
+                    const linkHref = `/${brand.filename}.html`; 
 
                     anchor.href = linkHref;
                     anchor.target = "_blank";
