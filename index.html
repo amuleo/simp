@@ -68,36 +68,37 @@
     </div>
 
     <script type="module">
-        import { getBrandData, getAllBrandKeys } from './root.js';
+    import { getBrandData, getAllBrandKeys } from './root.js';
 
-        const dynamicLinksContainer = document.getElementById('dynamic-links-container');
-        if (dynamicLinksContainer) {
-            dynamicLinksContainer.innerHTML = '';
-
-            const brandKeys = getAllBrandKeys();
-            
-            brandKeys.forEach(brandKey => {
-                const brand = getBrandData(brandKey);
-                if (brand) {
-                    const anchor = document.createElement('a');
-                    
-                    const linkText = brand.brandTitle;
-                    const linkHref = `/${brand.filename}.html`; 
-
-                    anchor.href = linkHref;
-                    anchor.target = "_blank";
-                    anchor.rel = "noopener noreferrer";
-
-                    anchor.className = `flex items-center justify-center text-[var(--color-background)] font-semibold py-3 px-6 rounded-xl transform hover:scale-105 w-full transition-all duration-200 hover:opacity-90 bg-[var(--color-brand-accent)]`;
-                    
-                    const span = document.createElement('span');
-                    span.textContent = linkText;
-                    anchor.appendChild(span);
-                    
-                    dynamicLinksContainer.appendChild(anchor);
+    const dynamicLinksContainer = document.getElementById('dynamic-links-container');
+    if (dynamicLinksContainer) {
+        dynamicLinksContainer.innerHTML = '';
+        const brandKeys = getAllBrandKeys();
+        brandKeys.forEach(brandKey => {
+            const brand = getBrandData(brandKey);
+            if (brand) {
+                const anchor = document.createElement('a');
+                let linkHref = '';
+                if (brand.type === 'page') {
+                    linkHref = `/${brand.filename}.html`;
+                } else if (brand.type === 'link') {
+                    if (brand.filename.startsWith('http://') || brand.filename.startsWith('https://')) {
+                        linkHref = brand.filename;
+                    } else {
+                        linkHref = 'https://' + brand.filename;
+                    }
                 }
-            });
-        }
-    </script>
+                anchor.href = linkHref;
+                anchor.target = "_blank";
+                anchor.rel = "noopener noreferrer";
+                anchor.className = "flex items-center justify-center text-[var(--color-background)] font-semibold py-3 px-6 rounded-xl transform hover:scale-105 w-full transition-all duration-200 hover:opacity-90 bg-[var(--color-brand-accent)]";
+                const span = document.createElement('span');
+                span.textContent = brand.brandTitle;
+                anchor.appendChild(span);
+                dynamicLinksContainer.appendChild(anchor);
+            }
+        });
+    }
+</script>
 </body>
 </html>
