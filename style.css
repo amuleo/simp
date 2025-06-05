@@ -10,6 +10,11 @@
     --color-link-bg-instagram-end: #fcb045;
 }
 
+@font-face {
+            font-family: 'Mikhak';
+            src: url('fonts/Mikhak.woff2') format('truetype');
+      }
+
 @media (prefers-color-scheme: dark) {
     :root {
         --color-background: #1a1a1a;
@@ -25,6 +30,6 @@
 }
 
 body {
-    font-family: 'mikhak', sans-serif;
+    font-family: 'Mikhak', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
