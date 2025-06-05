@@ -6,8 +6,6 @@
     <title>خداحافظ برنامه نویسی</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Vazirmatn Font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         /* Define CSS Variables for Light and Dark Themes */
         :root {
@@ -44,9 +42,15 @@
             }
         }
 
-        /* Apply Vazirmatn font to the body, with sans-serif as a fallback */
+
+        @font-face {
+                font-family: 'Mikhak';
+                src: url('fonts/Mikhak.woff2') format('truetype');
+        }
+
+        
         body {
-            font-family: 'Vazirmatn', sans-serif;
+            font-family: 'Mikhak', sans-serif;
         }
 
         /* Link Styling */
