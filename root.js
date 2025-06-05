@@ -19,7 +19,7 @@ const brandContent = {
                     url: "https://www.instagram.com/zixum_channel",
                     gradientClasses: "from-instagram-start via-instagram-mid to-instagram-end"
                 }
-            ],
+            ]
         }
     };
 
