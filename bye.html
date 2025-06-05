@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خداحافظ برنامه نویسی</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Vazirmatn Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define CSS Variables for Light and Dark Themes */
+        :root {
+            /* Light theme defaults */
+            --bg-body: #f7fafc; /* light gray */
+            --text-body: #2d3748; /* dark gray */
+            --bg-container: #ffffff; /* white */
+            --border-container: #e2e8f0; /* light border */
+            
+            /* Date box specific variables */
+            --bg-date-box: #e0e7ff; /* light blue for date box */
+            --text-date-box: #2d3748; /* dark text for date box */
+            --border-date-box: #c3dafe; /* light blue border */
+
+            /* Link hover color - subtle light blue */
+            --link-color-hover: #93c5fd; /* blue-300 */
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                /* Dark theme overrides */
+                --bg-body: #1a202c; /* dark gray */
+                --text-body: #e2e8f0; /* light text */
+                --bg-container: #2d3748; /* slightly lighter dark gray */
+                --border-container: #4a5568; /* dark border */
+                
+                /* Date box specific variables in dark mode */
+                --bg-date-box: #3a475a; /* darker blue/gray for date box */
+                --text-date-box: #e2e8f0; /* light text for date box */
+                --border-date-box: #5f728c; /* darker border */
+                
+                /* Link hover color in dark mode - subtle light blue */
+                --link-color-hover: #60a5fa; /* blue-400 */
+            }
+        }
+
+        /* Apply Vazirmatn font to the body, with sans-serif as a fallback */
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        /* Link Styling */
+        a {
+            /* Links should inherit text color by default */
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: var(--link-color-hover); /* Apply hover color */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-[var(--bg-body)] text-[var(--text-body)] p-0 sm:p-6 md:p-8 flex items-center justify-center min-h-screen transition-colors duration-300">
+    <!-- Main container: Added sm:border and removed border-none for cleaner conditional border -->
+    <div class="container bg-[var(--bg-container)] rounded-none sm:rounded-xl p-0 sm:p-6 sm:p-8 md:p-10 w-full sm:max-w-2xl mx-auto sm:mx-auto sm:border border-[var(--border-container)] transition-colors duration-300">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 text-center text-[var(--text-body)]">
+            خداحافظ برنامه نویسی
+        </h1>
+
+        <!-- Date Box for Farewell -->
+        <div id="farewell-date-box" class="bg-[var(--bg-date-box)] text-[var(--text-date-box)] border border-[var(--border-date-box)] rounded-lg p-4 mb-8 transition-colors duration-300 mx-4 sm:mx-0">
+            <!-- Content will be added by JavaScript -->
+        </div>
+
+        <!-- Main Content Sections -->
+        <section class="mb-6 px-4 py-4 sm:p-6 sm:border sm:border-[var(--border-container)] sm:rounded-lg">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-right text-[var(--text-body)]">
+                شروع با رویا، پایان با واقعیت
+            </h2>
+            <p class="text-base sm:text-lg leading-relaxed mb-4 text-justify text-[var(--text-body)]">
+                چند سال پیش، برنامه‌نویسی و وبلاگ‌نویسی برام یه دنیای آزاد و خلاق بود. پلتفرم‌های مختلفی مثل <strong class="font-bold">بلاگفا، بلاگ بیان، گیت‌هاب پیج، کلودفلر پیج</strong> و... رو امتحان کردم، همیشه دنبال جایی بودم که بتونم حرف دلمو بزنم و پروژه‌هامو نشون بدم. اما این مسیر که با کلی انگیزه شروع شد، کم‌کم شد یه کابوس واقعی، پر از استرس و ناامیدی. اون انگیزه اولیه رفت و جاش رو یه حس اجبار گرفت. هر دریچه‌ای که فکر می‌کردم برای خلاقیته، یکی یکی بسته شد؛ هم به‌خاطر محدودیتای پلتفرما، هم فشارهای اعصاب‌خوردکن دیگه.
+            </p>
+        </section>
+
+        <section class="mb-6 px-4 py-4 sm:p-6 sm:border sm:border-[var(--border-container)] sm:rounded-lg">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-right text-[var(--text-body)]">
+                دنیای برنامه‌نویسی و وب: منبع استرس، نه سرگرمی!
+            </h2>
+            <p class="text-base sm:text-lg leading-relaxed mb-4 text-justify text-[var(--text-body)]">
+                تا الان هفت تا دامنه خریدم که تهش رسید به همین ناامیدی. این دامنه‌ها و وضعیت فعلی‌شون رو می‌تونی تو جدول زیر ببینی:
+            </p>
+
+            <!-- Domain Table -->
+            <div class="domain-table border border-[var(--border-container)] rounded-lg overflow-hidden mt-6 mb-8">
+                <div class="domain-item flex flex-col py-3 px-4 border-b border-[var(--border-container)] bg-[var(--bg-container)] text-[var(--text-body)]">
+                    <a href="https://eliwe.ir" target="_blank" rel="noopener noreferrer" class="font-semibold mb-1 hover:underline hover:text-[var(--link-color-hover)]">eliwe.ir</a>
+                    <span class="text-sm text-[var(--text-body)]">قبلاً وبلاگ در بیان (غیرفعال)</span>
+                </div>
+                <div class="domain-item flex flex-col py-3 px-4 border-b border-[var(--border-container)] bg-[var(--bg-container)] text-[var(--text-body)]">
+                    <a href="https://amuleo.ir" target="_blank" rel="noopener noreferrer" class="font-semibold mb-1 hover:underline hover:text-[var(--link-color-hover)]">amuleo.ir</a>
+                    <span class="text-sm text-[var(--text-body)]">دایرکتوری و بیوگرافی آنلاین</span>
+                </div>
+                <div class="domain-item flex flex-col py-3 px-4 border-b border-[var(--border-container)] bg-[var(--bg-container)] text-[var(--text-body)]">
+                    <a href="https://robustaclub.ir" target="_blank" rel="noopener noreferrer" class="font-semibold mb-1 hover:underline hover:text-[var(--link-color-hover)]">robustaclub.ir</a>
+                    <span class="text-sm text-[var(--text-body)]">فعال، بدون استفاده</span>
+                </div>
+                <div class="domain-item flex flex-col py-3 px-4 border-b border-[var(--border-container)] bg-[var(--bg-container)] text-[var(--text-body)]">
+                    <a href="https://simp.ir" target="_blank" rel="noopener noreferrer" class="font-semibold mb-1 hover:underline hover:text-[var(--link-color-hover)]">simp.ir</a>
+                    <span class="text-sm text-[var(--text-body)]">فعال، بدون استفاده</span>
+                </div>
+                <div class="domain-item flex flex-col py-3 px-4 border-b border-[var(--border-container)] bg-[var(--bg-container)] text-[var(--text-body)]">
+                    <a href="https://sobhnevis.ir" target="_blank" rel="noopener noreferrer" class="font-semibold mb-1 hover:underline hover:text-[var(--link-color-hover)]">sobhnevis.ir</a>
+                    <span class="text-sm text-[var(--text-body)]">وبلاگ بلاگفا (مسدود شده)</span>
+                </div>
+                <div class="domain-item flex flex-col py-3 px-4 border-b border-[var(--border-container)] bg-[var(--bg-container)] text-[var(--text-body)]">
+                    <a href="https://zixum.ir" target="_blank" rel="noopener noreferrer" class="font-semibold mb-1 hover:underline hover:text-[var(--link-color-hover)]">zixum.ir</a>
+                    <span class="text-sm text-[var(--text-body)]">دایرکتوری کوچک لینک‌های اجتماعی</span>
+                </div>
+                <div class="domain-item flex flex-col py-3 px-4 bg-[var(--bg-container)] text-[var(--text-body)]">
+                    <a href="https://zytask.ir" target="_blank" rel="noopener noreferrer" class="font-semibold mb-1 hover:underline hover:text-[var(--link-color-hover)]">zytask.ir</a>
+                    <span class="text-sm text-[var(--text-body)]">سایت پایدار و بدون تغییر</span>
+                </div>
+            </div>
+
+            <p class="text-base sm:text-lg leading-relaxed mb-4 text-justify text-[var(--text-body)]">
+                دنیای برنامه‌نویسی و وب‌نویسی برای من دیگه سرگرمی نیست، فقط استرسه. هر بار که می‌شینم پای کد یا وبلاگ، زندگیم مختل میشه. چشمام ضعیف‌تر میشه، تمرکزم کم میشه و حتی روابط اجتماعیم رو هم خراب می‌کنه. این کار دیگه برام شبیه یه سرگرمی کثیف و بدون فایده‌ست که فقط اعتماد به نفسمو داغون می‌کنه. حس می‌کنم عمرم رو پای یه چیزی گذاشتم که هیچ ارزش واقعی‌ای برام نداره. دیگه نمی‌خوام تجربه پاک شدن محتوا یا مسدود شدن سایت رو تکرار کنم.
+            </p>
+        </section>
+
+        <section class="mb-8 px-4 py-4 sm:p-6 sm:border sm:border-[var(--border-container)] sm:rounded-lg">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-right text-[var(--text-body)]">
+                تصمیم آخر: پایان داستان، شروع فصل جدید
+            </h2>
+            <p class="text-base sm:text-lg leading-relaxed text-justify text-[var(--text-body)]">
+                تصمیمم قطعیه: دیگه سراغ خرید دامنه‌ی جدید نمیرم. دلنوشته‌هامو تو قالب وبلاگ، سایت یا هیچ صفحه اینترنتی دیگه‌ای به اشتراک نمی‌ذارم. با هیچ کد ادیتور آنلاین یا ابزار مشابهی کار نمی‌کنم و هیچ پروژه آنلاینی نخواهم ساخت. این پایان یه فصلیه که توش بیشتر از حد خودمو درگیر یه دنیایی کردم که جز آشفتگی و استرس چیزی برام نداشت.
+            </p>
+            <p class="text-base sm:text-lg leading-relaxed text-justify text-[var(--text-body)]">
+                حالا وقتشه به خودم برگردم، به آرامش برسم و انرژیم رو صرف کارایی کنم که واقعاً واسم مهمن و بهم حس خوب میدن. به‌جای برنامه‌نویسی و وب‌نویسی، می‌خوام وقتم رو صرف سرگرمی‌های مفیدتری کنم: <strong class="font-bold">کتاب خوندن، دیدن فیلم سینمایی یا سریال</strong>. این خداحافظی، آغازی برای یه زندگی با آرامش بیشتر و کنترل کامل روی مسیر خودمه.
+            </p>
+        </section>
+    </div>
+
+    <script>
+        // Function to calculate days since a given date
+        function calculateDaysSince(startDate) {
+            const today = new Date();
+            const diffTime = Math.abs(today.getTime() - startDate.getTime());
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            return diffDays;
+        }
+
+        // Fixed farewell date (June 5, 2025)
+        const farewellDate = new Date('2025-06-05T00:00:00'); // Changed to June 5, 2025
+        const farewellShamsiDate = '۱۵ خرداد ۱۴۰۴'; // Corresponding Shamsi date for June 5, 2025
+
+        // Update the date box on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateBox = document.getElementById('farewell-date-box');
+            if (dateBox) {
+                const daysSince = calculateDaysSince(farewellDate);
+                dateBox.innerHTML = `
+                    <p class="text-base sm:text-lg text-center">
+                        تاریخ خداحافظی: ${farewellShamsiDate}
+                    </p>
+                    <p class="text-xl sm:text-2xl font-bold text-center mt-2">
+                        ${daysSince} روز بدون برنامه‌نویسی
+                    </p>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
