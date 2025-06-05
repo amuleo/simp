@@ -79,3 +79,7 @@ export function getBrandData(brandName) {
 
     return brandContent[brandName] || null;
 }
+
+export function getAllBrandKeys() {
+    return Object.keys(brandContent);
+}
