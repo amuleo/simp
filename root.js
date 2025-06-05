@@ -21,6 +21,14 @@ const brandContent = {
                     gradientClasses: "from-instagram-start via-instagram-mid to-instagram-end"
                 }
             ]
+        },
+        "bye": {
+            brandTitle: "خدافظ برنامه نویسی",
+            type: "link",
+            filename: "simp.ir/bye", // بدون پسوند
+            brandDescription: "",
+            socialLinks: [
+            ]
         }
     };
 
