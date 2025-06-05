@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سیمپل (simp.ir) | کوتاه کننده لینک انحصاری عمو لئو</title>
+    <meta name="description" content="سیمپل (simp.ir) پلتفرم اختصاصی کوتاه کننده لینک برای تمامی صفحات و محتوای اجتماعی عمو لئو. تمام لینک‌های مهم در یک مکان ساده و سریع.">
+    <meta name="keywords" content="سیمپل, simp.ir, عمو لئو, amuleo.ir, کوتاه کننده لینک انحصاری, لینک‌های اجتماعی, شبکه‌های اجتماعی, صفحات اجتماعی عمو لئو">
+    <meta property="og:title" content="سیمپل (simp.ir) | تمام لینک‌های عمو لئو در یک نگاه">
+    <meta property="og:description" content="با simp.ir، به سادگی و سرعت به تمام صفحات اجتماعی و محتوای عمو لئو دسترسی پیدا کنید. کوتاه کننده لینک انحصاری شما.">
+    <meta property="og:image" content="https://placehold.co/1200x630/10B981/ffffff?text=simp.ir">
+    <meta property="og:type" content="website">
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind CSS configuration for dynamic theme colors
+        tailwind.config = {
+            darkMode: 'media', // Enables dark mode based on user system preference
+            theme: {
+                extend: {
+                    colors: {
+                        'base-background': 'var(--color-background)',
+                        'base-text': 'var(--color-text)',
+                        'card-background': 'var(--color-card-background)',
+                        'card-text': 'var(--color-card-text)',
+                        'brand': 'var(--color-brand-accent)',
+                        'border-color': 'var(--color-border-accent)',
+                        'button-bg': 'var(--color-button-bg)', // Added: Tailwind will now recognize this
+                        'button-text': 'var(--color-button-text)', // Added: Tailwind will now recognize this
+                        // These Instagram colors are not used in this version for consistent button styling
+                        'instagram-start': 'var(--color-link-bg-instagram-start)',
+                        'instagram-mid': 'var(--color-link-bg-instagram-mid)',
+                        'instagram-end': 'var(--color-link-bg-instagram-end)',
+                    },
+                },
+            },
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        body {
+            font-family: 'Mikhak', sans-serif;
+            font-weight: 400; /* Standard weight for body text */
+            line-height: 1.6; /* Improved line height for readability */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    </style>
+</head>
+<body dir="rtl" class="min-h-screen flex items-center justify-center p-4 bg-base-background text-base-text">
+
+    <div class="max-w-lg w-full rounded-2xl p-8 space-y-6 transition-all duration-300 bg-card-background text-card-text border border-border-color">
+        <div class="text-center mb-6">
+            <h1 class="text-2xl sm:text-4xl font-extrabold mb-2 tracking-tight text-brand">
+                سیمپل
+            </h1>
+            <p class="text-base sm:text-lg font-medium text-base-text">کوتاه کننده لینک انحصاری</p>
+        </div>
+
+        <div class="text-center mb-8">
+            <p class="text-sm sm:text-base leading-relaxed text-card-text brand-description-text">
+                به سیمپل خوش آمدید! <span class="font-bold text-brand">simp.ir</span> پلتفرم اختصاصی کوتاه کننده لینک برای تمامی صفحات و محتوای اجتماعی <a href="https://amuleo.ir" target="_blank" rel="noopener noreferrer" class="text-brand hover:underline">عمو لئو</a> از <a href="https://amuleo.ir" target="_blank" rel="noopener noreferrer" class="text-brand hover:underline">amuleo.ir</a> است. اینجا می‌توانید به سادگی به هر آنچه از عمو لئو نیاز دارید، دسترسی پیدا کنید.
+            </p>
+            <p class="text-sm sm:text-base leading-relaxed text-card-text mt-2 brand-description-text">
+                با یک لینک کوتاه، تمام جهان محتوای عمو لئو در دسترس شماست. این صفحه به شما کمک می‌کند تا با سرعت و دقت، لینک‌های مورد نیاز خود را پیدا کنید و همیشه در جریان آخرین فعالیت‌ها باشید.
+            </p>
+        </div>
+
+        <div class="w-full">
+            <h2 class="text-xl sm:text-2xl font-bold text-center mb-4 text-brand">
+                <i class="fas fa-link ml-2"></i>
+                <span>صفحات اجتماعی من</span>
+            </h2>
+            <div id="dynamic-links-container" class="flex flex-col justify-center items-center gap-3">
+                <!-- Dynamic links will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { getBrandData } from './root.js';
+
+        // Load data for the main simp.ir page
+        const appContent = getBrandData('simp_main_page');
+        
+        if (appContent && appContent.featuredBrands) {
+            const dynamicLinksContainer = document.getElementById('dynamic-links-container');
+            dynamicLinksContainer.innerHTML = ''; // Clear existing hardcoded links
+
+            appContent.featuredBrands.forEach(brandKey => {
+                const brand = getBrandData(brandKey); // Get full data for each featured brand
+                if (brand) {
+                    const anchor = document.createElement('a');
+                    // Get link text from pageTitle
+                    const linkText = brand.pageTitle;
+                    // Construct link using brandTitle (which is assumed to be filename)
+                    const linkHref = `/${brand.brandTitle.toLowerCase()}.html`; 
+
+                    anchor.href = linkHref;
+                    anchor.target = "_blank";
+                    anchor.rel = "noopener noreferrer";
+
+                    anchor.className = `flex items-center justify-center text-button-text font-semibold py-3 px-6 rounded-xl transform hover:scale-105 w-full transition-all duration-200 bg-button-bg hover:opacity-90`;
+                    
+                    const span = document.createElement('span');
+                    span.textContent = linkText;
+                    anchor.appendChild(span);
+                    
+                    dynamicLinksContainer.appendChild(anchor);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
