@@ -22,7 +22,7 @@ export function getBrandData(brandName) {
         "zixum": {
             pageTitle: "زیکسوم",
             brandTitle: "زیکسوم",
-            filename: "zixu,",
+            filename: "zixum",
             brandDescription: "جایی که سایه‌ها نجوا می‌کنند و رازها بیدار می‌شوند. به دنیای مرموز ما بپیوندید و با ناشناخته‌ها روبرو شوید.",
             socialLinks: [
                 {
