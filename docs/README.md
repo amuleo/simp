@@ -9,31 +9,34 @@
 
 ### قدم اول: اطلاعات مربوط به لینک رو در فایل **root.js** اضافه کن
 فایل **root.js** ریشه یا روت اصلی این پلتفرمه و برای افزودن اطلاعات لینک از قالب زیر استفاده کن:
-```txt
-"zixum": {
-            brandTitle: "زیکسوم",
-            filename: "zixum",
-            brandDescription: "به زیکسوم بپیوندید و به دنیای اسرار پنهان جهان وارد شوید. جایی برای اکتشافات فراطبیعی و محتوای مرموز.",
+```js
+"##": {
+            brandTitle: "##",
+            filename: "##", // بدون پسوند
+            brandDescription: "##",
             socialLinks: [
                 {
                     name: "تلگرام",
-                    url: "https://t.me/zixum_channel",
+                    url: "https://t.me/##",
                     backgroundColorClass: "bg-blue-500"
                 },
                 {
                     name: "یوتیوب",
-                    url: "https://www.youtube.com/@zixum_channel",
+                    url: "https://www.youtube.com/@##",
                     backgroundColorClass: "bg-red-700"
                 },
                 {
                     name: "اینستاگرام",
-                    url: "https://www.instagram.com/zixum_channel",
+                    url: "https://www.instagram.com/##",
                     gradientClasses: "from-instagram-start via-instagram-mid to-instagram-end"
                 }
             ]
         }
 ```
-> حواست باشه که بعدا ازکروشه (**}**) یکی مونده به آخر در رشته **brandContent** از **,** استفاده کنی
+حواست باشه که بعدا ازکروشه (**}**) یکی مونده به آخر در رشته **brandContent** از **,** استفاده کنی
+
+### قدم دوم: فایل لینک جدید را در ریشه سایت ایجاد کن
+برای این کار کافیه یه فایل به اسم **newlink FileName** در ریشه اصی سایت ایجاد کنی و محتوای مورد نیاز رو در تمپلیت زیر وارد کنی و در اون پیست کنی.
 
 ```html
 <!DOCTYPE html>
@@ -41,12 +44,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>زیکسوم - کاوش در جهان‌های مرموز و ناشناخته</title>
-    <meta name="description" content="به زیکسوم بپیوندید و به دنیای اسرار پنهان جهان وارد شوید. جایی برای اکتشافات فراطبیعی و محتوای مرموز.">
-    <meta name="keywords" content="زیکسوم, جهان مرموز, ناشناخته, فراطبیعی, اسرار, سایه‌ها, داستان‌های ترسناک, تئوری, دانستنی, عجیب و غریب, پیج, اینستاگرام">
-    <meta property="og:title" content="زیکسوم">
-    <meta property="og:description" content="زیکسوم: جایی برای کشف اسرار، محتوای فراطبیعی و تئوری های منحصر به فرد.">
-    <meta property="og:image" content="https://placehold.co/1200x630/2c2c2c/ffffff?text=zixum">
+    <title>##</title>
+    <meta name="description" content="##">
+    <meta name="keywords" content="##">
+    <meta property="og:title" content="##">
+    <meta property="og:description" content="##">
+    <meta property="og:image" content="https://placehold.co/1200x630/2c2c2c/ffffff?text=##">
     <meta property="og:type" content="website">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./script.js"></script>
@@ -71,7 +74,7 @@
     <script type="module">
         import { getBrandData } from './root.js';
 
-        const currentBrandName = "zixum";
+        const currentBrandName = "##";
 
         const appContent = getBrandData(currentBrandName);
         
@@ -112,10 +115,12 @@
             }
         } else {
             console.error(`Brand data for "${currentBrandName}" not found.`);
-            document.getElementById('brand-title').textContent = "زیکسوم";
+            document.getElementById('brand-title').textContent = "##";
             document.getElementById('brand-description').textContent = "اطلاعات فایل بارگذاری نشد.";
         }
     </script>
 </body>
 </html>
   ```
+
+> اگه مراحل بالا رو به درستی انجام دادی همه چیز حله، فقط یادت نره تست کنی ببینی همه چیز ردیفه یا نه
