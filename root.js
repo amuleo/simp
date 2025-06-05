@@ -1,12 +1,4 @@
-// data-root.js
-
-/**
- * Returns brand-specific data based on the provided brand name.
- * @param {string} brandName - The name of the brand (e.g., "zixum").
- * @returns {object|null} An object containing brand data, or null if the brand is not found.
- */
-export function getBrandData(brandName) {
-    // Define data for different brands
+    export function getBrandData(brandName) {
     const brandContent = {
         "zixum": {
             pageTitle: "زیکسوم",
@@ -33,7 +25,6 @@ export function getBrandData(brandName) {
                 }
             ]
         },
-        // You can add more brands here
         "anotherBrand": {
             pageTitle: "برند دیگر",
             brandTitle: "نام برند دیگر",
