@@ -9,6 +9,31 @@
 
 ### قدم اول: اطلاعات مربوط به لینک رو در فایل **root.js** اضافه کن
 فایل **root.js** ریشه یا روت اصلی این پلتفرمه و برای افزودن اطلاعات لینک از قالب زیر استفاده کن:
+```txt
+"zixum": {
+            brandTitle: "زیکسوم",
+            filename: "zixum",
+            brandDescription: "به زیکسوم بپیوندید و به دنیای اسرار پنهان جهان وارد شوید. جایی برای اکتشافات فراطبیعی و محتوای مرموز.",
+            socialLinks: [
+                {
+                    name: "تلگرام",
+                    url: "https://t.me/zixum_channel",
+                    backgroundColorClass: "bg-blue-500"
+                },
+                {
+                    name: "یوتیوب",
+                    url: "https://www.youtube.com/@zixum_channel",
+                    backgroundColorClass: "bg-red-700"
+                },
+                {
+                    name: "اینستاگرام",
+                    url: "https://www.instagram.com/zixum_channel",
+                    gradientClasses: "from-instagram-start via-instagram-mid to-instagram-end"
+                }
+            ]
+        }
+```
+<حواست باشه که بعدا ازکروشه (**}**) یکی مونده به آخر در رشته **brandContent** از **,** استفاده کنی>
 
 ```html
 <!DOCTYPE html>
