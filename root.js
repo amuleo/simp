@@ -30,6 +30,14 @@ const brandContent = {
                 }
             ]
         },
+        "zytask": {
+            brandTitle: "زای تسک",
+            type: "link",
+            filename: "zytask.ir", // بدون پسوند
+            brandDescription: "",
+            socialLinks: [
+            ]
+        },
         "bye": {
             brandTitle: "خدافظ برنامه نویسی",
             type: "link",
