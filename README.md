@@ -62,7 +62,7 @@
 
     <div class="max-w-lg w-full rounded-2xl p-8 space-y-4 transition-all duration-300 bg-card-background border border-[var(--color-border-accent)]">
         <div class="text-center">
-            <h1 id="brand-title" class="text-3xl sm:text-5xl font-extrabold mb-0 tracking-tight text-brand">
+            <h1 id="brand-title" class="text-3xl sm:text-5xl font-bold mb-0 tracking-tight text-brand">
             </h1>
         </div>
 
@@ -106,7 +106,7 @@
                         backgroundClasses = link.backgroundColorClass;
                     }
 
-                    anchor.className = `flex items-center justify-center text-white font-semibold py-3 px-6 rounded-xl transform hover:scale-105 w-full transition-all duration-200 ${backgroundClasses}`;
+                    anchor.className = `flex items-center justify-center text-white py-3 px-6 rounded-xl transform hover:scale-105 w-full transition-all duration-200 ${backgroundClasses}`;
                     
                     const span = document.createElement('span');
                     span.textContent = link.name;
