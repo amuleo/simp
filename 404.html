@@ -10,7 +10,6 @@
     <style>
         body {
             font-family: 'Vazirmatn', sans-serif;
-            transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         .font-vazirmatn {
@@ -18,7 +17,7 @@
         }
 
         .btn {
-            @apply px-8 py-4 rounded-full transition duration-300 ease-in-out cursor-pointer border;
+            @apply px-8 py-4 rounded-full ease-in-out cursor-pointer border;
         }
         .btn:active {
             transform: translateY(1px);
@@ -39,8 +38,8 @@
 <body class="flex flex-col min-h-screen">
 
     <main id="main-content" class="flex-grow container mx-auto p-4 md:p-8 flex flex-col items-center justify-center">
-        <div id="content-box" class="rounded-2xl p-6 md:p-10 max-w-md w-full text-center border transition-colors duration-500 ease-in-out">
-			<i id="main-icon" class="fas fa-exclamation-triangle text-9xl mb-6 transition-colors duration-500 ease-in-out"></i>
+        <div id="content-box" class="rounded-2xl p-6 md:p-10 max-w-md w-full text-center border ease-in-out">
+			<i id="main-icon" class="fas fa-exclamation-triangle text-9xl mb-6 ease-in-out"></i>
             <p class="text-xl md:text-2xl font-bold font-vazirmatn leading-relaxed mb-4">
                 صفحه پیدا نشد!
             </p>
@@ -56,7 +55,7 @@
         </div>
     </main>
 
-    <footer class="p-4 text-center rounded-t-2xl mt-8 border-t transition-colors duration-500 ease-in-out">
+    <footer class="p-4 text-center rounded-t-2xl mt-8 border-t ease-in-out">
         <p class="text-sm font-vazirmatn">تمامی حقوق محفوظ است. &copy;</p>
     </footer>
 
